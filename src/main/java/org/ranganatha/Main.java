@@ -12,12 +12,12 @@ public class Main {
         SessionFactory ses=conf.buildSessionFactory();
         Session s=ses.openSession();
         Transaction t=s.beginTransaction();
-        Student s1=new Student();
-        s1.setId(1);
-        s1.setAge(20);
-        s1.setName("Ranga");
-        s.persist(s1);
+
+
+        Student f=s.find(Student.class,1);
+        s.remove(f);
         t.commit();
+        System.out.println(f);
         s.close();
         ses.close();
     }

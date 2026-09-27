@@ -1,5 +1,6 @@
 package org.ranganatha;
 
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -7,6 +8,7 @@ import jakarta.persistence.Id;
 public class Student {
 
     @Id
+    @GeneratedValue
     private int id;
 
     private String name;
@@ -22,5 +24,8 @@ public class Student {
 
     public void setAge(int age) {
         this.age = age;
+    }
+    public String toString(){
+        return this.name+" "+this.id+" "+this.age;
     }
 }
