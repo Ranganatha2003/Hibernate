@@ -1,17 +1,17 @@
 package org.ranganatha;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name="students")
 public class Student {
 
     @Id
     @GeneratedValue
     private int id;
-
+    @Column(name = "student_name")
     private String name;
+    @Column(name = "student_age")
     private int age;
 
     public void setId(int id) {
